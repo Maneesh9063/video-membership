@@ -1,4 +1,4 @@
-import os
+import os, django_heroku
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '7w6ggl1i%3wq4%x_4z13gnkf07bg0nx7sg34kerj&3@eq#n0(h'
@@ -97,7 +97,7 @@ else:
     STRIPE_SECRET_KEY = ''
 
 # Django allauth
-
+django_heroku.settings(locals())
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
